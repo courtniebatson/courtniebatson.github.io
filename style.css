@@ -13,9 +13,12 @@
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  /* :not(.resume) — the résumé's printable sheet hardcodes white paper;
-     letting it pick up dark ink-on-cream vars would make the text unreadable. */
-  body:not(.resume):not([data-theme="light"]) {
+  /* data-theme is set on <html>, not <body> — must check it there, or the
+     light-mode override (toggling back to light while the OS prefers dark)
+     silently does nothing. :not(.resume) — the résumé's printable sheet
+     hardcodes white paper; letting it pick up dark ink-on-cream vars would
+     make the text unreadable. */
+  html:not([data-theme="light"]) body:not(.resume) {
     --cream: #1d1815; --paper: #262019; --ink: #f2ebe3; --muted: #b7a99b;
     --line: #3c332b; --terracotta: #e2886a; --terracotta-dark: #efa488; --sage: #9bb598;
     --cream-rgb: 29, 24, 21;
