@@ -11,13 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23b5573a'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#b5573a">
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
   <header class="nav">
     <div class="wrap">
       <a class="brand" href="#top">Courtnie Batson</a>
       <nav>
-        <ul>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-menu">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -30,31 +37,42 @@
 
   <main id="top">
     <div class="wrap hero">
-      <p class="eyebrow">Ontario, California</p>
-      <h1>Helping people grow, so programs for young people thrive.</h1>
-      <p class="lede">Training &amp; Development · Community Engagement · Student Enrichment. Fourteen-plus years building curriculum, coaching teams, and growing partnerships across schools and nonprofits.</p>
-      <p class="lede" style="font-size:1rem;margin-top:-10px;">courtnie.batson@gmail.com · Ontario, CA</p>
-      <div class="btns">
-        <a class="btn primary" href="https://www.linkedin.com/in/courtnie-batson-b4055866/">Connect on LinkedIn</a>
-        <a class="btn ghost" href="resume.html">View résumé</a>
+      <div class="hero-row">
+        <img class="avatar" src="headshot.jpg" alt="Portrait of Courtnie Batson">
+        <div class="hero-text">
+          <p class="eyebrow">Ontario, California</p>
+          <h1>Helping people grow, so programs for young people thrive.</h1>
+          <p class="lede">Training &amp; Development · Community Engagement · Student Enrichment. Fourteen-plus years building curriculum, coaching teams, and growing partnerships across schools and nonprofits.</p>
+          <p class="lede" style="font-size:1rem;margin-top:-10px;">courtnie.batson@gmail.com · Ontario, CA</p>
+          <div class="btns">
+            <a class="btn primary" href="https://www.linkedin.com/in/courtnie-batson-b4055866/">Connect on LinkedIn</a>
+            <a class="btn ghost" href="resume.html">View résumé</a>
+          </div>
+        </div>
+      </div>
+      <div class="stats" data-reveal>
+        <div class="stat"><span class="stat-num">14+</span><span class="stat-label">Years in nonprofit &amp; school-partner leadership</span></div>
+        <div class="stat"><span class="stat-num">7</span><span class="stat-label">Organizations led or supported</span></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Director-level roles held</span></div>
+        <div class="stat"><span class="stat-num">2021</span><span class="stat-label">Started a concurrent leadership track</span></div>
       </div>
     </div>
 
     <section id="about">
       <div class="wrap">
         <h2>About</h2>
-        <p class="lede" style="max-width:720px;">Over 14 years, Courtnie has moved from front-line program coordination into director-level leadership across three organizations, then chosen to specialize full-time in training and development. Along the way she has run programs for foster youth, leads how staff are trained for expanded learning programs, and — since 2021 — built a second track leading community engagement and DEI strategy for Black-owned food and beverage businesses, alongside her nonprofit work. The throughline: find the real gap, then design training staff can put to use right away.</p>
+        <p class="lede" style="max-width:720px;" data-reveal>Over 14 years, Courtnie has moved from front-line program coordination into director-level leadership across three organizations, then chosen to specialize full-time in training and development. Along the way she has run programs for foster youth, leads how staff are trained for expanded learning programs, and — since 2021 — built a second track leading community engagement and DEI strategy for Black-owned food and beverage businesses, alongside her nonprofit work. The throughline: find the real gap, then design training staff can put to use right away.</p>
         <h2 style="margin-top:36px;">What I do</h2>
         <div class="pillars">
-          <div class="card">
+          <div class="card" data-reveal style="--i:0">
             <h3>Training &amp; Development</h3>
             <p>I assess what teams need, then design and lead workshops that help staff feel confident in the classroom and in expanded learning programs.</p>
           </div>
-          <div class="card">
+          <div class="card" data-reveal style="--i:1">
             <h3>Community Engagement</h3>
             <p>I build partnerships with schools, agencies, and businesses, and lead strategy sessions that move equity and inclusion work forward.</p>
           </div>
-          <div class="card">
+          <div class="card" data-reveal style="--i:2">
             <h3>Student Enrichment</h3>
             <p>I have led youth programs from middle school through young adulthood, including housing, mentoring, and employment readiness for foster youth.</p>
           </div>
@@ -66,6 +84,7 @@
       <div class="wrap">
         <h2>Experience</h2>
 
+        <div class="timeline" data-reveal>
         <article class="job">
           <div class="when">Aug 2023 – Present</div>
           <div>
@@ -145,26 +164,40 @@
             </ul>
           </div>
         </article>
+        </div>
       </div>
     </section>
 
     <section id="skills">
       <div class="wrap">
         <h2>Skills</h2>
-        <ul class="tags">
-          <li>Training needs assessment</li>
-          <li>Curriculum design</li>
-          <li>Workshop facilitation</li>
-          <li>Staff coaching</li>
-          <li>Program management</li>
-          <li>Partnership development</li>
-          <li>Budget &amp; timeline management</li>
-          <li>Volunteer recruitment &amp; retention</li>
-          <li>DEI strategy</li>
-          <li>Digital outreach</li>
-          <li>Project management</li>
-          <li>CRM &amp; Raiser's Edge</li>
-        </ul>
+        <div class="skill-group" data-reveal style="--i:0">
+          <h3>Training &amp; Facilitation</h3>
+          <ul class="tags">
+            <li>Training needs assessment</li>
+            <li>Curriculum design</li>
+            <li>Workshop facilitation</li>
+            <li>Staff coaching</li>
+          </ul>
+        </div>
+        <div class="skill-group" data-reveal style="--i:1">
+          <h3>Leadership &amp; Partnerships</h3>
+          <ul class="tags">
+            <li>Program management</li>
+            <li>Partnership development</li>
+            <li>Volunteer recruitment &amp; retention</li>
+            <li>DEI strategy</li>
+            <li>Budget &amp; timeline management</li>
+          </ul>
+        </div>
+        <div class="skill-group" data-reveal style="--i:2">
+          <h3>Operations &amp; Tools</h3>
+          <ul class="tags">
+            <li>Digital outreach</li>
+            <li>Project management</li>
+            <li>CRM &amp; Raiser's Edge</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -172,15 +205,15 @@
       <div class="wrap">
         <h2>Education &amp; certifications</h2>
         <div class="edu">
-          <div class="card">
+          <div class="card" data-reveal style="--i:0">
             <h3>M.A., Exposition &amp; Leadership</h3>
             <p>Biola University, 2017 – 2021</p>
           </div>
-          <div class="card">
+          <div class="card" data-reveal style="--i:1">
             <h3>B.A., Political Science</h3>
             <p>Pepperdine University, 2009 – 2013</p>
           </div>
-          <div class="card">
+          <div class="card" data-reveal style="--i:2">
             <h3>Certifications</h3>
             <p>Foundations of Project Management and Sales &amp; CRM Overview (Coursera, 2022)</p>
           </div>
@@ -195,5 +228,8 @@
       <p>© 2026 Courtnie Batson</p>
     </div>
   </footer>
+
+  <button class="to-top" aria-label="Back to top" title="Back to top">↑</button>
+  <script src="app.js" defer></script>
 </body>
 </html>
