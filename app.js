@@ -3,6 +3,22 @@
   var prefersMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
   if (prefersMotion) document.documentElement.classList.add('motion-ok');
 
+  // Dark mode toggle — per-viewer convenience only, never required state
+  var themeBtn = document.querySelector('.theme-toggle');
+  if (themeBtn) {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+    themeBtn.addEventListener('click', function () {
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var current = document.documentElement.getAttribute('data-theme') || (dark ? 'dark' : 'light');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('nav-menu');
